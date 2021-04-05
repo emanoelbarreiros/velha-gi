@@ -1,0 +1,84 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: aee2b1a59cee34e9274ed2414c6fa529c0198c27bb76fd98f8887ddf4c508b77
+
+name:           velha-gi
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/velha-gi#readme>
+homepage:       https://github.com/githubuser/velha-gi#readme
+bug-reports:    https://github.com/githubuser/velha-gi/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/velha-gi
+
+library
+  exposed-modules:
+      Grid
+      Lib
+      Velha
+  other-modules:
+      Paths_velha_gi
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , gi-gtk
+    , gi-gtk-declarative
+    , gi-gtk-declarative-app-simple
+    , split
+    , text
+    , vector
+  default-language: Haskell2010
+
+executable velha-gi-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_velha_gi
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gi-gtk
+    , gi-gtk-declarative
+    , gi-gtk-declarative-app-simple
+    , split
+    , text
+    , vector
+    , velha-gi
+  default-language: Haskell2010
+
+test-suite velha-gi-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      VelhaSpec
+      Paths_velha_gi
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , gi-gtk
+    , gi-gtk-declarative
+    , gi-gtk-declarative-app-simple
+    , hspec
+    , split
+    , text
+    , vector
+    , velha-gi
+  default-language: Haskell2010
